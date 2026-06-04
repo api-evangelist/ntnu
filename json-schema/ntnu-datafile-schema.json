@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/ntnu/json-schema/ntnu-datafile-schema.json",
+  "title": "DataFile",
+  "description": "A file belonging to a DataverseNO/NTNU dataset.",
+  "type": "object",
+  "required": [
+    "contentType"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Internal numeric identifier."
+    },
+    "contentType": {
+      "type": "string",
+      "description": "MIME content type of the file."
+    },
+    "filesize": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Size of the file in bytes."
+    },
+    "friendlySize": {
+      "type": "string",
+      "description": "Human-readable file size."
+    },
+    "checksumType": {
+      "type": "string",
+      "description": "Checksum algorithm, e.g. MD5 or SHA-1."
+    },
+    "checksumValue": {
+      "type": "string",
+      "description": "Computed checksum value."
+    },
+    "restricted": {
+      "type": "boolean",
+      "description": "Whether file access is restricted."
+    },
+    "directoryLabel": {
+      "type": "string",
+      "description": "Directory path within the dataset."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the file."
+    },
+    "originalFileFormat": {
+      "type": "string",
+      "description": "Original format before ingest."
+    },
+    "originalFileName": {
+      "type": "string",
+      "description": "Original uploaded file name."
+    },
+    "tabularData": {
+      "type": "boolean",
+      "description": "Whether the file is tabular data."
+    },
+    "unf": {
+      "type": "string",
+      "description": "Universal Numeric Fingerprint for tabular data."
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Human-readable file name."
+    }
+  }
+}

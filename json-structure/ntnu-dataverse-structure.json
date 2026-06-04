@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/ntnu/json-structure/ntnu-dataverse-structure.json",
+  "name": "Dataverse",
+  "type": "object",
+  "description": "JSON Structure for a Dataverse collection in DataverseNO.",
+  "required": [
+    "dataverseType"
+  ],
+  "properties": {
+    "id": {
+      "type": "int64"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "affiliation": {
+      "type": "string"
+    },
+    "dataverseType": {
+      "type": "string"
+    },
+    "contactEmails": {
+      "type": "string"
+    },
+    "metadataBlockRoot": {
+      "type": "boolean"
+    },
+    "facetRoot": {
+      "type": "boolean"
+    },
+    "released": {
+      "type": "boolean"
+    },
+    "depositTermsOfUse": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    }
+  }
+}

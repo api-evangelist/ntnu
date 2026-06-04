@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/ntnu/json-structure/ntnu-dataset-structure.json",
+  "name": "Dataset",
+  "type": "object",
+  "description": "JSON Structure for a DataverseNO/NTNU research dataset.",
+  "properties": {
+    "id": {
+      "type": "int64"
+    },
+    "identifier": {
+      "type": "string"
+    },
+    "protocol": {
+      "type": "string"
+    },
+    "authority": {
+      "type": "string"
+    },
+    "persistentURL": {
+      "type": "uri"
+    },
+    "publicationDate": {
+      "type": "string"
+    },
+    "metadataLanguage": {
+      "type": "string"
+    },
+    "authorString": {
+      "type": "string"
+    },
+    "citation": {
+      "type": "string"
+    },
+    "versionNumber": {
+      "type": "int32"
+    },
+    "minorVersionNumber": {
+      "type": "int32"
+    },
+    "released": {
+      "type": "boolean"
+    },
+    "deaccessioned": {
+      "type": "boolean"
+    },
+    "fileAccessRequest": {
+      "type": "boolean"
+    },
+    "displayName": {
+      "type": "string"
+    }
+  }
+}

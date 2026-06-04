@@ -1,0 +1,57 @@
+vocabulary:
+  name: NTNU DataverseNO Research Data Vocabulary
+  description: >-
+    Controlled vocabulary for the key objects and fields exposed by the
+    DataverseNO native API, the national research-data repository where NTNU
+    researchers deposit and publish datasets via the NTNU dataverse. Terms are
+    drawn from the real Dataverse 6.6 OpenAPI description served at
+    https://dataverse.no/openapi.
+  version: "1.0.0"
+  terms:
+    - term: Dataverse
+      definition: >-
+        A collection (container) of datasets and/or sub-collections; the NTNU
+        dataverse is the collection alias "ntnu" within DataverseNO.
+      tags: [ collection, container, core ]
+    - term: Dataset
+      definition: >-
+        A unit of research data with a persistent identifier, citation metadata
+        and one or more versions and files.
+      tags: [ dataset, core, research-data ]
+    - term: DataFile
+      definition: >-
+        An individual file belonging to a dataset, carrying a content type,
+        size, checksum and access restriction flags.
+      tags: [ file, core ]
+    - term: persistentURL
+      definition: >-
+        The resolvable persistent identifier (typically a DOI) that cites a
+        dataset; DataverseNO uses the 10.18710 DOI authority.
+      tags: [ identifier, doi, citation ]
+    - term: protocol
+      definition: The persistent identifier protocol, e.g. "doi".
+      tags: [ identifier ]
+    - term: authority
+      definition: The persistent identifier authority/prefix, e.g. "10.18710".
+      tags: [ identifier ]
+    - term: versionState
+      definition: >-
+        Lifecycle state of a dataset version, such as DRAFT, RELEASED or
+        DEACCESSIONED.
+      tags: [ versioning, lifecycle ]
+    - term: metadataBlocks
+      definition: >-
+        Grouped, schema-driven metadata fields (e.g. the citation block) that
+        describe a dataset version.
+      tags: [ metadata ]
+    - term: checksumType
+      definition: The checksum algorithm used to verify a file, e.g. MD5 or SHA-1.
+      tags: [ file, integrity ]
+    - term: restricted
+      definition: Whether access to a file requires explicit permission or request.
+      tags: [ file, access-control ]
+    - term: UNF
+      definition: >-
+        Universal Numeric Fingerprint, a format-independent signature for
+        tabular data enabling verifiable citation.
+      tags: [ tabular, integrity, citation ]

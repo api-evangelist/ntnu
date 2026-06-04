@@ -1,0 +1,19 @@
+{
+  "status": "OK",
+  "data": {
+    "id": 1234,
+    "alias": "ntnu",
+    "name": "NTNU - Norwegian University of Science and Technology",
+    "affiliation": "NTNU",
+    "dataverseContacts": [
+      {
+        "displayOrder": 0,
+        "contactEmail": "researchdata@ntnu.no"
+      }
+    ],
+    "permissionRoot": false,
+    "description": "Research data published by NTNU researchers via DataverseNO.",
+    "dataverseType": "DEPARTMENT",
+    "creationDate": "2018-01-01T00:00:00Z"
+  }
+}

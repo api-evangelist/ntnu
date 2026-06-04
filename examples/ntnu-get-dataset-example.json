@@ -1,0 +1,32 @@
+{
+  "status": "OK",
+  "data": {
+    "id": 567890,
+    "identifier": "ABC123",
+    "persistentUrl": "https://doi.org/10.18710/ABC123",
+    "protocol": "doi",
+    "authority": "10.18710",
+    "publisher": "DataverseNO",
+    "publicationDate": "2024-09-15",
+    "metadataLanguage": "en",
+    "latestVersion": {
+      "id": 778899,
+      "datasetId": 567890,
+      "versionNumber": 1,
+      "versionMinorNumber": 0,
+      "versionState": "RELEASED",
+      "UNF": "UNF:6:abcdef==",
+      "metadataBlocks": {
+        "citation": {
+          "displayName": "Citation Metadata",
+          "fields": [
+            {
+              "typeName": "title",
+              "value": "Example NTNU Research Dataset"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

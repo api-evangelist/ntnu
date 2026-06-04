@@ -73,6 +73,24 @@ apis:
     properties:
       - type: Documentation
         url: https://guides.dataverse.org/en/latest/api/
+      - type: OpenAPI
+        url: openapi/ntnu-dataverseno.yaml
+      - type: JSONSchema
+        url: json-schema/ntnu-dataset-schema.json
+      - type: JSONSchema
+        url: json-schema/ntnu-dataverse-schema.json
+      - type: JSONSchema
+        url: json-schema/ntnu-datafile-schema.json
+      - type: x-json-structure
+        url: json-structure/ntnu-dataset-structure.json
+      - type: x-examples
+        url: examples/ntnu-get-dataset-example.json
+      - type: x-rules
+        url: rules/ntnu-rules.yml
+      - type: x-vocabulary
+        url: vocabulary/ntnu-vocabulary.yml
+      - type: x-json-ld
+        url: json-ld/ntnu-context.jsonld
   - aid: ntnu:tp
     name: TP Timetable Web Service
     description: >-

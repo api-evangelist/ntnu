@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/ntnu/json-schema/ntnu-dataset-schema.json",
+  "title": "Dataset",
+  "description": "A DataverseNO/NTNU research dataset as returned by the Dataverse native API.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Internal numeric identifier."
+    },
+    "identifier": {
+      "type": "string",
+      "description": "Persistent identifier (PID) local part."
+    },
+    "protocol": {
+      "type": "string",
+      "description": "PID protocol, e.g. doi."
+    },
+    "authority": {
+      "type": "string",
+      "description": "PID authority/prefix."
+    },
+    "persistentURL": {
+      "type": "string",
+      "format": "uri",
+      "description": "Resolvable persistent URL for the dataset."
+    },
+    "publicationDate": {
+      "type": "string",
+      "description": "Date the dataset was published."
+    },
+    "storageIdentifier": {
+      "type": "string",
+      "description": "Storage backend identifier."
+    },
+    "metadataLanguage": {
+      "type": "string",
+      "description": "Language of the dataset metadata."
+    },
+    "authorString": {
+      "type": "string",
+      "description": "Concatenated author display string."
+    },
+    "citation": {
+      "type": "string",
+      "description": "Formatted citation for the dataset."
+    },
+    "versionNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Major version number."
+    },
+    "minorVersionNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Minor version number."
+    },
+    "released": {
+      "type": "boolean",
+      "description": "Whether the dataset has been released."
+    },
+    "deaccessioned": {
+      "type": "boolean",
+      "description": "Whether the dataset has been deaccessioned."
+    },
+    "fileAccessRequest": {
+      "type": "boolean",
+      "description": "Whether file access can be requested."
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Human-readable name of the dataset."
+    }
+  }
+}

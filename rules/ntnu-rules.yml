@@ -1,0 +1,53 @@
+rules:
+
+  ntnu-info-contact:
+    description: API info object should provide a contact.
+    severity: warn
+    given: $.info
+    then:
+      field: contact
+      function: truthy
+
+  ntnu-info-description:
+    description: API info object should have a description.
+    severity: warn
+    given: $.info
+    then:
+      field: description
+      function: truthy
+
+  ntnu-server-defined:
+    description: At least one server URL should be defined (DataverseNO instance).
+    severity: error
+    given: $
+    then:
+      field: servers
+      function: truthy
+
+  ntnu-operation-tags:
+    description: Every operation should be tagged for navigation.
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch]
+    then:
+      field: tags
+      function: truthy
+
+  ntnu-pid-path-naming:
+    description: >-
+      Dataverse identifies datasets by persistent id; persistentId query
+      parameter usage is the documented pattern, so prefer it over numeric ids
+      where both exist. This rule flags datafile/dataset paths for review.
+    severity: info
+    given: $.paths[?(@property.match(/persistentId/i))]
+    then:
+      function: truthy
+
+  ntnu-response-envelope:
+    description: >-
+      Dataverse native API responses use a top-level status/data envelope;
+      operations should document a 200 response.
+    severity: warn
+    given: $.paths[*][get,post]
+    then:
+      field: responses.200
+      function: truthy

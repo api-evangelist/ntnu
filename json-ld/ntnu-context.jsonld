@@ -1,0 +1,53 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ntnu": "https://www.ntnu.edu/vocab#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "name": "schema:name",
+    "url": "schema:url",
+    "description": "schema:description",
+    "identifier": "schema:identifier",
+    "affiliation": "schema:affiliation",
+
+    "University": "schema:CollegeOrUniversity",
+    "Dataset": "schema:Dataset",
+    "Dataverse": {
+      "@id": "ntnu:Dataverse",
+      "@type": "@id"
+    },
+    "DataFile": "schema:DataDownload",
+
+    "alias": "ntnu:alias",
+    "dataverseType": "ntnu:dataverseType",
+    "contactEmails": "schema:email",
+    "persistentURL": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "protocol": "ntnu:pidProtocol",
+    "authority": "ntnu:pidAuthority",
+    "publicationDate": {
+      "@id": "schema:datePublished",
+      "@type": "schema:Date"
+    },
+    "metadataLanguage": "schema:inLanguage",
+    "citation": "dcterms:bibliographicCitation",
+    "authorString": "schema:author",
+    "versionNumber": "schema:version",
+
+    "contentType": "schema:encodingFormat",
+    "filesize": {
+      "@id": "schema:contentSize",
+      "@type": "schema:Number"
+    },
+    "checksumType": "ntnu:checksumType",
+    "checksumValue": "ntnu:checksumValue",
+    "restricted": "ntnu:restricted",
+    "directoryLabel": "ntnu:directoryLabel"
+  },
+  "@type": "University",
+  "name": "Norwegian University of Science and Technology",
+  "url": "https://www.ntnu.edu/",
+  "description": "Norway's largest university; research data is published via the NTNU dataverse in the DataverseNO national repository."
+}

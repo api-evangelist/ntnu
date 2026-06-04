@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/ntnu/json-structure/ntnu-datafile-structure.json",
+  "name": "DataFile",
+  "type": "object",
+  "description": "JSON Structure for a file belonging to a DataverseNO/NTNU dataset.",
+  "required": [
+    "contentType"
+  ],
+  "properties": {
+    "id": {
+      "type": "int64"
+    },
+    "contentType": {
+      "type": "string"
+    },
+    "filesize": {
+      "type": "int64"
+    },
+    "friendlySize": {
+      "type": "string"
+    },
+    "checksumType": {
+      "type": "string"
+    },
+    "checksumValue": {
+      "type": "string"
+    },
+    "restricted": {
+      "type": "boolean"
+    },
+    "directoryLabel": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "originalFileFormat": {
+      "type": "string"
+    },
+    "originalFileName": {
+      "type": "string"
+    },
+    "tabularData": {
+      "type": "boolean"
+    },
+    "unf": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    }
+  }
+}

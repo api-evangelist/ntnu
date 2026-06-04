@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/ntnu/json-schema/ntnu-dataverse-schema.json",
+  "title": "Dataverse",
+  "description": "A Dataverse collection (e.g. the NTNU dataverse) in DataverseNO.",
+  "type": "object",
+  "required": [
+    "dataverseType"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Internal numeric identifier."
+    },
+    "alias": {
+      "type": "string",
+      "description": "URL-safe alias of the collection, e.g. ntnu."
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the collection."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the collection."
+    },
+    "affiliation": {
+      "type": "string",
+      "description": "Affiliated institution."
+    },
+    "dataverseType": {
+      "type": "string",
+      "description": "Type of the dataverse collection."
+    },
+    "contactEmails": {
+      "type": "string",
+      "description": "Contact email(s) for the collection."
+    },
+    "metadataBlockRoot": {
+      "type": "boolean",
+      "description": "Whether this collection roots its own metadata blocks."
+    },
+    "facetRoot": {
+      "type": "boolean",
+      "description": "Whether this collection roots its own facets."
+    },
+    "released": {
+      "type": "boolean",
+      "description": "Whether the collection is published."
+    },
+    "depositTermsOfUse": {
+      "type": "string",
+      "description": "Terms of use for deposits."
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Human-readable name of the collection."
+    }
+  }
+}
