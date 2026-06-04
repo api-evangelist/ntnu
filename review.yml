@@ -1,0 +1,55 @@
+---
+name: Norwegian University of Science and Technology
+description: Norwegian University of Science and Technology public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/ntnu/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 3
+    summary: >-
+      NTNU has no single consolidated institutional developer portal, but a
+      meaningful public API footprint exists through national Sikt-operated
+      shared infrastructure. Verified live and public: the Cristin research
+      information REST API (NTNU is institution 194, returned NTNU records on a
+      live query) and the NVA / api.nva.unit.no research-archive API where the
+      former NTNU Open repository now lives. The legacy ntnuopen.ntnu.no OAI-PMH
+      endpoint now redirects (302) into the NVA single-page app rather than
+      serving OAI XML, indicating a migration to Sikt NVA. DataverseNO hosts an
+      NTNU research-data dataverse backed by the documented Dataverse REST API.
+      The TP timetable web service at tp.educloud.no/ntnu/ws/ exists but is
+      access controlled (HTTP 401). Feide/Dataporten provides identity APIs.
+      Many NTNU lab/student GitHub orgs exist (EECS-NTNU verified) but no single
+      official institutional org. No endpoints were fabricated; gated and
+      migrated services are flagged honestly.
+    endpoints:
+      - url: https://www.ntnu.edu/
+        status: 200
+        note: Official institution website, resolves.
+      - url: https://api.cristin.no/v2/institutions?name=NTNU
+        status: 200
+        note: Public Cristin REST API returns NTNU as institution id 194.
+      - url: https://api.nva.unit.no/cristin/person
+        status: 200
+        note: NVA public API endpoint responds 200.
+      - url: https://api.nva.unit.no/publication
+        status: 403
+        note: NVA publication endpoint requires auth/specific request shape.
+      - url: https://ntnuopen.ntnu.no/ntnu-oai/request?verb=Identify
+        status: 302
+        note: Legacy NTNU Open OAI now redirects to nva.sikt.no SPA (migrated).
+      - url: https://dataverse.no/api/info/version
+        status: 200
+        note: DataverseNO native REST API live; version 6.6 returned.
+      - url: https://tp.educloud.no/ntnu/ws/1.4/
+        status: 401
+        note: TP timetable web service exists but is access controlled.
+      - url: https://docs.feide.no/
+        status: 200
+        note: Feide/Dataporten identity (OIDC/OAuth2/SAML) documentation.
+      - url: https://github.com/EECS-NTNU
+        status: 200
+        note: NTNU-affiliated GitHub org; no single official institutional org.
+      - url: https://www.linkedin.com/school/ntnu/
+        status: 999
+        note: LinkedIn school page exists; 999 is LinkedIn bot-block, not absence.

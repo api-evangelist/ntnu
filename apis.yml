@@ -1,0 +1,123 @@
+---
+aid: ntnu
+name: Norwegian University of Science and Technology
+description: >-
+  The Norwegian University of Science and Technology (NTNU) is Norway's largest
+  university, headquartered in Trondheim with campuses in Gjoverik and Alesund,
+  and ranked #264 in the QS World University Rankings 2025. NTNU does not operate
+  a single consolidated institutional developer portal; instead its public,
+  machine-readable footprint is delivered largely through national shared
+  research and education infrastructure operated by Sikt (the Norwegian Agency
+  for Shared Services in Education and Research). Confirmed public, programmatic
+  access exists via the Cristin research information REST API (NTNU is Cristin
+  institution 194), the NVA (Nasjonalt vitenarkiv) API that now hosts the
+  migrated NTNU Open institutional repository, the DataverseNO research-data
+  repository API, the TP timetable web service, and Feide/Dataporten identity
+  (OpenID Connect / OAuth2 / SAML). Several NTNU lab and student GitHub
+  organizations exist, but there is no single official institutional GitHub org.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/ntnu/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Research
+  - Open Data
+  - Norway
+  - Scandinavia
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: ntnu:cristin
+    name: Cristin Research Information API
+    description: >-
+      Cristin is the Norwegian national Current Research Information System.
+      NTNU's research output, persons, projects and institution records are
+      exposed through the public Cristin v2 REST API; NTNU is Cristin
+      institution id 194. The API returns JSON and is operated nationally by
+      Sikt on behalf of participating institutions including NTNU.
+    humanURL: https://api.cristin.no/v2/doc/index.html
+    baseURL: https://api.cristin.no/v2/
+    tags: [ Research, CRIS, Publications, Open Data ]
+    properties:
+      - type: Documentation
+        url: https://api.cristin.no/v2/doc/index.html
+  - aid: ntnu:nva
+    name: NVA Nasjonalt Vitenarkiv API
+    description: >-
+      The National Research Archive (Nasjonalt vitenarkiv, NVA) is the Sikt
+      operated open research archive that now hosts NTNU's institutional
+      repository content (the former NTNU Open / ntnuopen.ntnu.no, which now
+      redirects into NVA). NVA exposes a public REST API for publications and
+      Cristin person/organization data.
+    humanURL: https://nva.sikt.no/
+    baseURL: https://api.nva.unit.no/
+    tags: [ Research, Repository, Open Access, Publications ]
+    properties:
+      - type: Documentation
+        url: https://nva.sikt.no/
+  - aid: ntnu:dataverseno
+    name: DataverseNO Research Data API
+    description: >-
+      DataverseNO is the national, curated research-data repository (a Dataverse
+      instance) where NTNU researchers deposit and publish datasets via the NTNU
+      dataverse. Dataverse provides a documented native REST API for search,
+      dataset metadata and file access.
+    humanURL: https://dataverse.no/dataverse/ntnu
+    baseURL: https://dataverse.no/api/
+    tags: [ Research Data, Datasets, Open Data, Repository ]
+    properties:
+      - type: Documentation
+        url: https://guides.dataverse.org/en/latest/api/
+  - aid: ntnu:tp
+    name: TP Timetable Web Service
+    description: >-
+      TP (Timeplan) is the timetable, room-booking and course-activity system
+      used by NTNU and hosted at tp.educloud.no/ntnu. It provides a versioned
+      web-service interface under the /ntnu/ws/ path for course and timetable
+      data. The web service is access controlled (returns HTTP 401 without
+      credentials), so programmatic use requires institutional authorization.
+    humanURL: https://tp.educloud.no/ntnu/timeplan/
+    tags: [ Timetable, Courses, Scheduling, Gated ]
+    properties:
+      - type: Documentation
+        url: https://tp.educloud.no/ntnu/timeplan/
+  - aid: ntnu:feide
+    name: Feide / Dataporten Identity (OpenID Connect / SAML)
+    description: >-
+      NTNU authenticates users through Feide, the national identity federation
+      operated by Sikt, with Dataporten providing OAuth2 / OpenID Connect and
+      SAML based single sign-on and identity APIs. Service providers integrating
+      with NTNU users register clients and obtain tokens through Feide.
+    humanURL: https://docs.feide.no/
+    baseURL: https://auth.dataporten.no/
+    tags: [ Identity, Authentication, OpenID Connect, OAuth2, SAML, SSO ]
+    properties:
+      - type: Documentation
+        url: https://docs.feide.no/
+common:
+  - type: Website
+    url: https://www.ntnu.edu/
+  - type: GitHub
+    url: https://github.com/EECS-NTNU
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/ntnu/
+  - type: DeveloperPortal
+    url: https://docs.feide.no/
+  - type: Authentication
+    url: https://docs.feide.no/
+  - type: Plans
+    url: plans/ntnu-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/ntnu-rate-limits.yml
+  - type: FinOps
+    url: finops/ntnu-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
