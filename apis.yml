@@ -118,6 +118,10 @@ apis:
       - type: Documentation
         url: https://docs.feide.no/
 common:
+  - type: VulnerabilityDisclosure
+    url: security/ntnu-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/ntnu-domain-security.yml
   - type: Website
     url: https://www.ntnu.edu/
   - type: GitHub
@@ -136,6 +140,8 @@ common:
     url: finops/ntnu-finops.yml
   - type: Review
     url: review.yml
+  - url: https://nyheter.ntnu.no/en/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
