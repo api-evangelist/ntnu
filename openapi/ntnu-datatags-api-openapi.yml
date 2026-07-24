@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  title: Dataverse Access Datatags API
+  description: Open source research data repository software.
+  version: '6.6'
+servers:
+- url: https://dataverse.no/api
+  description: DataverseNO national research-data repository (hosts the NTNU dataverse)
+tags:
+- name: Datatags
+paths:
+  /datatags/receiveTags/{uniqueCacheId}:
+    post:
+      operationId: DataTagsAPI_receiveTags
+      parameters:
+      - name: uniqueCacheId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datatags

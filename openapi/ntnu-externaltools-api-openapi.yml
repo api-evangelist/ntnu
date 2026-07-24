@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: Dataverse Access ExternalTools API
+  description: Open source research data repository software.
+  version: '6.6'
+servers:
+- url: https://dataverse.no/api
+  description: DataverseNO national research-data repository (hosts the NTNU dataverse)
+tags:
+- name: ExternalTools
+paths:
+  /externalTools:
+    get:
+      operationId: ExternalToolsApi_getExternalTools
+      responses:
+        '200':
+          description: OK
+      tags:
+      - ExternalTools
+    post:
+      operationId: ExternalToolsApi_addExternalTool
+      responses:
+        '200':
+          description: OK
+      tags:
+      - ExternalTools
+  /externalTools/{id}:
+    get:
+      operationId: ExternalToolsApi_getExternalTool
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - ExternalTools
+    delete:
+      operationId: ExternalToolsApi_deleteExternalTool
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - ExternalTools

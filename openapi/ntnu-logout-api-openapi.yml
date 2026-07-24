@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: Dataverse Access Logout API
+  description: Open source research data repository software.
+  version: '6.6'
+servers:
+- url: https://dataverse.no/api
+  description: DataverseNO national research-data repository (hosts the NTNU dataverse)
+tags:
+- name: Logout
+paths:
+  /logout:
+    post:
+      operationId: Logout_logout
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Logout

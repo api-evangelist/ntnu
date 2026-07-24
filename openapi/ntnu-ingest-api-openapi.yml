@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: Dataverse Access Ingest API
+  description: Open source research data repository software.
+  version: '6.6'
+servers:
+- url: https://dataverse.no/api
+  description: DataverseNO national research-data repository (hosts the NTNU dataverse)
+tags:
+- name: Ingest
+paths:
+  /ingest/test/file:
+    get:
+      operationId: TestIngest_datafile
+      parameters:
+      - name: fileName
+        in: query
+        schema:
+          type: string
+      - name: fileType
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      tags:
+      - Ingest

@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: Dataverse Access Datasetfields API
+  description: Open source research data repository software.
+  version: '6.6'
+servers:
+- url: https://dataverse.no/api
+  description: DataverseNO national research-data repository (hosts the NTNU dataverse)
+tags:
+- name: Datasetfields
+paths:
+  /datasetfields/facetables:
+    get:
+      operationId: DatasetFields_listAllFacetableDatasetFields
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Datasetfields

@@ -1,0 +1,102 @@
+openapi: 3.0.3
+info:
+  title: Dataverse Access Search API
+  description: Open source research data repository software.
+  version: '6.6'
+servers:
+- url: https://dataverse.no/api
+  description: DataverseNO national research-data repository (hosts the NTNU dataverse)
+tags:
+- name: Search
+paths:
+  /search:
+    get:
+      operationId: Search_search
+      parameters:
+      - name: fq
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: geo_point
+        in: query
+        schema:
+          type: string
+      - name: geo_radius
+        in: query
+        schema:
+          type: string
+      - name: metadata_fields
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: order
+        in: query
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        schema:
+          format: int32
+          type: integer
+      - name: q
+        in: query
+        schema:
+          type: string
+      - name: query_entities
+        in: query
+        schema:
+          type: boolean
+      - name: show_api_urls
+        in: query
+        schema:
+          type: boolean
+      - name: show_entity_ids
+        in: query
+        schema:
+          type: boolean
+      - name: show_facets
+        in: query
+        schema:
+          type: boolean
+      - name: show_my_data
+        in: query
+        schema:
+          type: boolean
+      - name: show_relevance
+        in: query
+        schema:
+          type: boolean
+      - name: show_type_counts
+        in: query
+        schema:
+          type: boolean
+      - name: sort
+        in: query
+        schema:
+          type: string
+      - name: start
+        in: query
+        schema:
+          format: int32
+          type: integer
+      - name: subtree
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: type
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Search
