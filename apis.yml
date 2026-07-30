@@ -16,9 +16,21 @@ description: >-
   (OpenID Connect / OAuth2 / SAML). Several NTNU lab and student GitHub
   organizations exist, but there is no single official institutional GitHub org.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ntnu.png
 url: https://raw.githubusercontent.com/api-evangelist/ntnu/refs/heads/main/apis.yml
 tags:
   - Education
@@ -32,91 +44,1085 @@ created: '2026-06-03'
 modified: '2026-06-03'
 specificationVersion: '0.19'
 apis:
-  - aid: ntnu:cristin
-    name: Cristin Research Information API
-    description: >-
-      Cristin is the Norwegian national Current Research Information System.
-      NTNU's research output, persons, projects and institution records are
-      exposed through the public Cristin v2 REST API; NTNU is Cristin
-      institution id 194. The API returns JSON and is operated nationally by
-      Sikt on behalf of participating institutions including NTNU.
-    humanURL: https://api.cristin.no/v2/doc/index.html
-    baseURL: https://api.cristin.no/v2/
-    tags: [ Research, CRIS, Publications, Open Data ]
-    properties:
-      - type: Documentation
-        url: https://api.cristin.no/v2/doc/index.html
-  - aid: ntnu:nva
-    name: NVA Nasjonalt Vitenarkiv API
-    description: >-
-      The National Research Archive (Nasjonalt vitenarkiv, NVA) is the Sikt
-      operated open research archive that now hosts NTNU's institutional
-      repository content (the former NTNU Open / ntnuopen.ntnu.no, which now
-      redirects into NVA). NVA exposes a public REST API for publications and
-      Cristin person/organization data.
-    humanURL: https://nva.sikt.no/
-    baseURL: https://api.nva.unit.no/
-    tags: [ Research, Repository, Open Access, Publications ]
-    properties:
-      - type: Documentation
-        url: https://nva.sikt.no/
-  - aid: ntnu:dataverseno
-    name: DataverseNO Research Data API
-    description: >-
-      DataverseNO is the national, curated research-data repository (a Dataverse
-      instance) where NTNU researchers deposit and publish datasets via the NTNU
-      dataverse. Dataverse provides a documented native REST API for search,
-      dataset metadata and file access.
-    humanURL: https://dataverse.no/dataverse/ntnu
-    baseURL: https://dataverse.no/api/
-    tags: [ Research Data, Datasets, Open Data, Repository ]
-    properties:
-      - type: Documentation
-        url: https://guides.dataverse.org/en/latest/api/
-      - type: OpenAPI
-        url: openapi/ntnu-dataverseno.yaml
-      - type: JSONSchema
-        url: json-schema/ntnu-dataset-schema.json
-      - type: JSONSchema
-        url: json-schema/ntnu-dataverse-schema.json
-      - type: JSONSchema
-        url: json-schema/ntnu-datafile-schema.json
-      - type: x-json-structure
-        url: json-structure/ntnu-dataset-structure.json
-      - type: x-examples
-        url: examples/ntnu-get-dataset-example.json
-      - type: x-rules
-        url: rules/ntnu-rules.yml
-      - type: x-vocabulary
-        url: vocabulary/ntnu-vocabulary.yml
-      - type: x-json-ld
-        url: json-ld/ntnu-context.jsonld
-  - aid: ntnu:tp
-    name: TP Timetable Web Service
-    description: >-
-      TP (Timeplan) is the timetable, room-booking and course-activity system
-      used by NTNU and hosted at tp.educloud.no/ntnu. It provides a versioned
-      web-service interface under the /ntnu/ws/ path for course and timetable
-      data. The web service is access controlled (returns HTTP 401 without
-      credentials), so programmatic use requires institutional authorization.
-    humanURL: https://tp.educloud.no/ntnu/timeplan/
-    tags: [ Timetable, Courses, Scheduling, Gated ]
-    properties:
-      - type: Documentation
-        url: https://tp.educloud.no/ntnu/timeplan/
-  - aid: ntnu:feide
-    name: Feide / Dataporten Identity (OpenID Connect / SAML)
-    description: >-
-      NTNU authenticates users through Feide, the national identity federation
-      operated by Sikt, with Dataporten providing OAuth2 / OpenID Connect and
-      SAML based single sign-on and identity APIs. Service providers integrating
-      with NTNU users register clients and obtain tokens through Feide.
-    humanURL: https://docs.feide.no/
-    baseURL: https://auth.dataporten.no/
-    tags: [ Identity, Authentication, OpenID Connect, OAuth2, SAML, SSO ]
-    properties:
-      - type: Documentation
-        url: https://docs.feide.no/
+- aid: ntnu:cristin
+  name: Cristin Research Information API
+  description: >-
+    Cristin is the Norwegian national Current Research Information System. NTNU's research output, persons,
+    projects and institution records are exposed through the public Cristin v2 REST API; NTNU is Cristin
+    institution id 194. The API returns JSON and is operated nationally by Sikt on behalf of participating
+    institutions including NTNU.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Research
+  - CRIS
+  - Publications
+  - Open Data
+  properties:
+  - type: Documentation
+    url: https://api.cristin.no/v2/doc/index.html
+- aid: ntnu:nva
+  name: NVA Nasjonalt Vitenarkiv API
+  description: >-
+    The National Research Archive (Nasjonalt vitenarkiv, NVA) is the Sikt operated open research archive
+    that now hosts NTNU's institutional repository content (the former NTNU Open / ntnuopen.ntnu.no, which
+    now redirects into NVA). NVA exposes a public REST API for publications and Cristin person/organization
+    data.
+  humanURL: https://nva.sikt.no/
+  baseURL: https://api.nva.unit.no/
+  tags:
+  - Research
+  - Repository
+  - Open Access
+  - Publications
+  properties:
+  - type: Documentation
+    url: https://nva.sikt.no/
+- aid: ntnu:tp
+  name: TP Timetable Web Service
+  description: >-
+    TP (Timeplan) is the timetable, room-booking and course-activity system used by NTNU and hosted at
+    tp.educloud.no/ntnu. It provides a versioned web-service interface under the /ntnu/ws/ path for course
+    and timetable data. The web service is access controlled (returns HTTP 401 without credentials), so
+    programmatic use requires institutional authorization.
+  humanURL: https://tp.educloud.no/ntnu/timeplan/
+  tags:
+  - Timetable
+  - Courses
+  - Scheduling
+  - Gated
+  properties:
+  - type: Documentation
+    url: https://tp.educloud.no/ntnu/timeplan/
+- aid: ntnu:feide
+  name: Feide / Dataporten Identity (OpenID Connect / SAML)
+  description: >-
+    NTNU authenticates users through Feide, the national identity federation operated by Sikt, with Dataporten
+    providing OAuth2 / OpenID Connect and SAML based single sign-on and identity APIs. Service providers
+    integrating with NTNU users register clients and obtain tokens through Feide.
+  humanURL: https://docs.feide.no/
+  baseURL: https://auth.dataporten.no/
+  tags:
+  - Identity
+  - Authentication
+  - OpenID Connect
+  - OAuth2
+  - SAML
+  - SSO
+  properties:
+  - type: Documentation
+    url: https://docs.feide.no/
+- aid: ntnu:ntnu-access-api
+  name: Norwegian University of Science and Technology Access API
+  description: >-
+    The Access API from Norwegian University of Science and Technology — 23 operation(s) for access.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Access
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-access-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-addfilestodataset-api
+  name: Norwegian University of Science and Technology addFilesToDataset API
+  description: Uploads a set of files to a dataset
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - addFilesToDataset
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-addfilestodataset-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-addfiletodataset-api
+  name: Norwegian University of Science and Technology addFileToDataset API
+  description: Uploads a file for a dataset
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - addFileToDataset
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-addfiletodataset-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-addglobusfilestodataset-api
+  name: Norwegian University of Science and Technology addGlobusFilesToDataset API
+  description: Uploads a Globus file for a dataset
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - addGlobusFilesToDataset
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-addglobusfilestodataset-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-admin-api
+  name: Norwegian University of Science and Technology Admin API
+  description: >-
+    The Admin API from Norwegian University of Science and Technology — 130 operation(s) for admin.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-admin-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-batch-api
+  name: Norwegian University of Science and Technology Batch API
+  description: >-
+    The Batch API from Norwegian University of Science and Technology — 3 operation(s) for batch.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Batch
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-batch-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-builtin-users-api
+  name: Norwegian University of Science and Technology Builtin Users API
+  description: >-
+    The Builtin Users API from Norwegian University of Science and Technology — 4 operation(s) for builtin
+    users.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Builtin Users
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-builtin-users-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-datasetfields-api
+  name: Norwegian University of Science and Technology Datasetfields API
+  description: >-
+    The Datasetfields API from Norwegian University of Science and Technology — 1 operation(s) for datasetfields.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Datasetfields
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-datasetfields-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-datasets-api
+  name: Norwegian University of Science and Technology Datasets API
+  description: >-
+    The Datasets API from Norwegian University of Science and Technology — 87 operation(s) for datasets.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Datasets
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-datasets-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-datatags-api
+  name: Norwegian University of Science and Technology Datatags API
+  description: >-
+    The Datatags API from Norwegian University of Science and Technology — 1 operation(s) for datatags.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Datatags
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-datatags-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-dataversefeatureditems-api
+  name: Norwegian University of Science and Technology DataverseFeaturedItems API
+  description: >-
+    The DataverseFeaturedItems API from Norwegian University of Science and Technology — 1 operation(s)
+    for dataversefeatureditems.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - DataverseFeaturedItems
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-dataversefeatureditems-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-dataverses-api
+  name: Norwegian University of Science and Technology Dataverses API
+  description: >-
+    The Dataverses API from Norwegian University of Science and Technology — 39 operation(s) for dataverses.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Dataverses
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-dataverses-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-edit-api
+  name: Norwegian University of Science and Technology Edit API
+  description: >-
+    The Edit API from Norwegian University of Science and Technology — 1 operation(s) for edit.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Edit
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-edit-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-externaltools-api
+  name: Norwegian University of Science and Technology ExternalTools API
+  description: >-
+    The ExternalTools API from Norwegian University of Science and Technology — 2 operation(s) for externaltools.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - ExternalTools
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-externaltools-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-files-api
+  name: Norwegian University of Science and Technology Files API
+  description: >-
+    The Files API from Norwegian University of Science and Technology — 20 operation(s) for files.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-files-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-harvest-api
+  name: Norwegian University of Science and Technology Harvest API
+  description: >-
+    The Harvest API from Norwegian University of Science and Technology — 7 operation(s) for harvest.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Harvest
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-harvest-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-inbox-api
+  name: Norwegian University of Science and Technology Inbox API
+  description: >-
+    The Inbox API from Norwegian University of Science and Technology — 1 operation(s) for inbox.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Inbox
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-inbox-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-info-api
+  name: Norwegian University of Science and Technology Info API
+  description: >-
+    The Info API from Norwegian University of Science and Technology — 48 operation(s) for info.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Info
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-info-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-ingest-api
+  name: Norwegian University of Science and Technology Ingest API
+  description: >-
+    The Ingest API from Norwegian University of Science and Technology — 1 operation(s) for ingest.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Ingest
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-ingest-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-licenses-api
+  name: Norwegian University of Science and Technology Licenses API
+  description: >-
+    The Licenses API from Norwegian University of Science and Technology — 6 operation(s) for licenses.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Licenses
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-licenses-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-logout-api
+  name: Norwegian University of Science and Technology Logout API
+  description: >-
+    The Logout API from Norwegian University of Science and Technology — 1 operation(s) for logout.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Logout
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-logout-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-mail-api
+  name: Norwegian University of Science and Technology Mail API
+  description: >-
+    The Mail API from Norwegian University of Science and Technology — 1 operation(s) for mail.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Mail
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-mail-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-meta-api
+  name: Norwegian University of Science and Technology Meta API
+  description: >-
+    The Meta API from Norwegian University of Science and Technology — 2 operation(s) for meta.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Meta
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-meta-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-metadatablocks-api
+  name: Norwegian University of Science and Technology Metadatablocks API
+  description: >-
+    The Metadatablocks API from Norwegian University of Science and Technology — 2 operation(s) for metadatablocks.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Metadatablocks
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-metadatablocks-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-mydata-api
+  name: Norwegian University of Science and Technology Mydata API
+  description: >-
+    The Mydata API from Norwegian University of Science and Technology — 1 operation(s) for mydata.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Mydata
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-mydata-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-notifications-api
+  name: Norwegian University of Science and Technology Notifications API
+  description: >-
+    The Notifications API from Norwegian University of Science and Technology — 6 operation(s) for notifications.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Notifications
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-notifications-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-pids-api
+  name: Norwegian University of Science and Technology Pids API
+  description: >-
+    The Pids API from Norwegian University of Science and Technology — 6 operation(s) for pids.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Pids
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-pids-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-replacefilesindataset-api
+  name: Norwegian University of Science and Technology replaceFilesInDataset API
+  description: Replace a file to a dataset
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - replaceFilesInDataset
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-replacefilesindataset-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-roles-api
+  name: Norwegian University of Science and Technology Roles API
+  description: >-
+    The Roles API from Norwegian University of Science and Technology — 2 operation(s) for roles.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-roles-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-saveauxiliaryfilewithversion-api
+  name: Norwegian University of Science and Technology saveAuxiliaryFileWithVersion API
+  description: Save Auxiliary File With Version
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - saveAuxiliaryFileWithVersion
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-saveauxiliaryfilewithversion-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-search-api
+  name: Norwegian University of Science and Technology Search API
+  description: >-
+    The Search API from Norwegian University of Science and Technology — 1 operation(s) for search.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-search-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-sendfeedback-api
+  name: Norwegian University of Science and Technology Sendfeedback API
+  description: >-
+    The Sendfeedback API from Norwegian University of Science and Technology — 1 operation(s) for sendfeedback.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Sendfeedback
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-sendfeedback-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-uploaddatasetlogo-api
+  name: Norwegian University of Science and Technology uploadDatasetLogo API
+  description: Uploads a logo for a dataset
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - uploadDatasetLogo
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-uploaddatasetlogo-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-users-api
+  name: Norwegian University of Science and Technology Users API
+  description: >-
+    The Users API from Norwegian University of Science and Technology — 10 operation(s) for users.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-users-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
+- aid: ntnu:ntnu-workflows-api
+  name: Norwegian University of Science and Technology Workflows API
+  description: >-
+    The Workflows API from Norwegian University of Science and Technology — 1 operation(s) for workflows.
+  humanURL: https://api.cristin.no/v2/doc/index.html
+  baseURL: https://api.cristin.no/v2/
+  tags:
+  - Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/ntnu-workflows-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/
+  - type: JSONSchema
+    url: json-schema/ntnu-dataset-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-dataverse-schema.json
+  - type: JSONSchema
+    url: json-schema/ntnu-datafile-schema.json
+  - type: x-json-structure
+    url: json-structure/ntnu-dataset-structure.json
+  - type: x-examples
+    url: examples/ntnu-get-dataset-example.json
+  - type: x-rules
+    url: rules/ntnu-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/ntnu-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/ntnu-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/ntnu-agentic-access.yml
