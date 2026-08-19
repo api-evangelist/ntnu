@@ -1,0 +1,89 @@
+{
+  "item": [
+    {
+      "id": "68fb262f-02aa-4d3e-95e5-497a1bea93b2",
+      "name": "Datasetfields",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "78abccaf-c0cf-46ee-9877-c0bc4d93563c",
+          "name": "Dataset Fields list All Facetable Dataset Fields",
+          "request": {
+            "name": "Dataset Fields list All Facetable Dataset Fields",
+            "description": {},
+            "url": {
+              "path": [
+                "datasetfields",
+                "facetables"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a924e6f3-2398-430f-af33-77dee6e9ccba",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datasetfields",
+                    "facetables"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dataverse.no/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "28fd0847-dfd5-4d93-9c79-30cda2469594",
+    "name": "Dataverse Access Datasetfields API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Open source research data repository software.",
+      "type": "text/plain"
+    }
+  }
+}

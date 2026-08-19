@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dataverse Access Notifications API",
+    "version": "6.6"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Notifications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Notifications_getAllNotificationsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dataverse.no/api/notifications/all"
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_getMutedEmailsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dataverse.no/api/notifications/mutedEmails"
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_muteEmailsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dataverse.no/api/notifications/mutedEmails/:typeName",
+            "params": [
+              {
+                "name": "typeName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_unmuteEmailsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dataverse.no/api/notifications/mutedEmails/:typeName",
+            "params": [
+              {
+                "name": "typeName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_getMutedNotificationsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dataverse.no/api/notifications/mutedNotifications"
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_muteNotificationsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dataverse.no/api/notifications/mutedNotifications/:typeName",
+            "params": [
+              {
+                "name": "typeName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_unmuteNotificationsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dataverse.no/api/notifications/mutedNotifications/:typeName",
+            "params": [
+              {
+                "name": "typeName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_deleteNotificationForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dataverse.no/api/notifications/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

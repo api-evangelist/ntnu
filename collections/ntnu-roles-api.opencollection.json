@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dataverse Access Roles API",
+    "version": "6.6"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Roles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Roles_createNewRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dataverse.no/api/roles",
+            "params": [
+              {
+                "name": "dvo",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Roles_viewRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dataverse.no/api/roles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Roles_deleteRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dataverse.no/api/roles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
