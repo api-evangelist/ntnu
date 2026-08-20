@@ -106,6 +106,12 @@ apis:
   - Identity
   - Authentication
   - OpenID Connect
+  - SAML
+  - SSO
+  tags_raw:
+  - Identity
+  - Authentication
+  - OpenID Connect
   - OAuth2
   - SAML
   - SSO
@@ -524,6 +530,8 @@ apis:
   humanURL: https://api.cristin.no/v2/doc/index.html
   baseURL: https://api.cristin.no/v2/
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -843,6 +851,8 @@ apis:
   humanURL: https://api.cristin.no/v2/doc/index.html
   baseURL: https://api.cristin.no/v2/
   tags:
+  - Notification
+  tags_raw:
   - Notifications
   properties:
   - type: OpenAPI
@@ -956,7 +966,8 @@ apis:
   description: Save Auxiliary File With Version
   humanURL: https://api.cristin.no/v2/doc/index.html
   baseURL: https://api.cristin.no/v2/
-  tags:
+  tags: []
+  tags_raw:
   - saveAuxiliaryFileWithVersion
   properties:
   - type: OpenAPI
@@ -1042,7 +1053,8 @@ apis:
   description: Uploads a logo for a dataset
   humanURL: https://api.cristin.no/v2/doc/index.html
   baseURL: https://api.cristin.no/v2/
-  tags:
+  tags: []
+  tags_raw:
   - uploadDatasetLogo
   properties:
   - type: OpenAPI
@@ -1072,6 +1084,8 @@ apis:
   humanURL: https://api.cristin.no/v2/doc/index.html
   baseURL: https://api.cristin.no/v2/
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
