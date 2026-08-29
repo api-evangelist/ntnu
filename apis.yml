@@ -16,6 +16,18 @@ description: >-
   (OpenID Connect / OAuth2 / SAML). Several NTNU lab and student GitHub
   organizations exist, but there is no single official institutional GitHub org.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: unknown
@@ -1138,6 +1150,9 @@ apis:
   - type: x-json-ld
     url: json-ld/ntnu-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/ntnu-capability-edges.yml
+    name: Norwegian University of Science and Technology Business Capability Map
   - type: AgenticAccess
     url: agentic-access/ntnu-agentic-access.yml
   - type: VulnerabilityDisclosure
