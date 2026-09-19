@@ -130,6 +130,11 @@ apis:
   method: probed
   tags:
   - Research
+  - CRI
+  - Publications
+  - Open Data
+  tags_raw:
+  - Research
   - CRIS
   - Publications
   - Open Data
