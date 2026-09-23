@@ -1,0 +1,88 @@
+generated: '2026-08-30'
+method: probed
+source: https://www.ntnu.no/ojs/index.php/index/oai
+docs: https://www.ntnu.no/ojs/
+note: >-
+  Education-regime domain standards, established by live probe rather than by prose claim, because
+  NTNU publishes no API contract from which conformance could be read. Only one of the twelve
+  education-regime standards is met by a surface NTNU itself operates: OAI-PMH, at its own Open
+  Journal Systems installation. Every other hit in this file belongs to a platform NTNU is a tenant
+  of and is recorded with x-operator: tenant so it is not credited to NTNU's engineering. Absences
+  are recorded as conforms: false where they were actually checked, and omitted where no check was
+  possible.
+standards:
+- id: oai-pmh
+  conforms: true
+  x-operator: institution
+  evidence: >-
+    https://www.ntnu.no/ojs/index.php/index/oai — OAI-PMH 2.0 on NTNU's own registrable domain.
+    verb=Identify returns 200 text/xml with repositoryName "NTNU Open Access Journals", baseURL
+    https://www.ntnu.no/ojs/index.php/index/oai, protocolVersion 2.0, adminEmail postmottak@ntnu.no,
+    deletedRecord persistent, granularity YYYY-MM-DDThh:mm:ssZ, gzip/deflate compression.
+    verb=ListMetadataFormats returns 200 with metadataPrefix oai_dc, marcxml, oai_marc and rfc1807.
+    verb=ListSets returns 200 (45,393 bytes) enumerating per-journal and per-section sets across
+    sixteen journals (nikt, njsts, njse, norepid, chironomus, etikk_i_praksis, fauna_norvegica,
+    DKNVS_skrifter, BCRRA, lol, mmi, nordis, ntot, ps, radopen). Probed 2026-08-30.
+- id: saml
+  conforms: true
+  x-operator: tenant
+  evidence: >-
+    NTNU authenticates through SAML in the Feide federation, but does not publish its own SAML
+    entity. The Feide eduGAIN metadata at https://metadata.feide.no/feide-edugain-metadata.xml (200,
+    327,837 bytes) and https://metadata.feide.no/edugain-metadata.xml (200, 106,218,275 bytes) were
+    scanned on 2026-08-30: no entityID matching an NTNU domain is present. NTNU appears only as the
+    shibmd:Scope value "ntnu.no" attached to Sikt's national IdP entity https://idp.feide.no.
+    Conformance is Sikt's; NTNU's participation is a membership fact.
+- id: shibboleth
+  conforms: true
+  x-operator: tenant
+  evidence: >-
+    Same source as saml — the "ntnu.no" scope is declared inside a
+    urn:mace:shibboleth:metadata:1.0 shibmd:Scope element on the idp.feide.no entity. The
+    Shibboleth deployment is Sikt's national IdP, not an NTNU-operated IdP; idp.ntnu.no does not
+    resolve.
+- id: scim
+  conforms: false
+  evidence: >-
+    No SCIM endpoint or SCIM claim was found on any NTNU host. api.ntnu.no serves the Feide
+    account-chooser page for every path probed (/, /docs, /openapi.json, /status), so if SCIM is
+    used internally it is not publicly declared.
+- id: lti
+  conforms: false
+  x-operator: tenant
+  evidence: >-
+    NTNU's LMS is a hosted Canvas tenant (https://ntnu.instructure.com/, 200 on 2026-08-30). Canvas
+    is LTI-certified, but that conformance is Instructure's and is asserted on Instructure's host,
+    not on any NTNU surface. No NTNU-published LTI tool configuration was found.
+- id: oneroster
+  conforms: false
+  evidence: No OneRoster endpoint or claim found on any NTNU host.
+- id: ed-fi
+  conforms: false
+  evidence: No Ed-Fi endpoint or claim found; Ed-Fi is a US K-12 standard with no Norwegian uptake.
+- id: caliper
+  conforms: false
+  evidence: No Caliper Analytics endpoint or claim found on any NTNU host.
+- id: qti
+  conforms: false
+  x-operator: tenant
+  evidence: >-
+    NTNU's assessment platform is Inspera (urn:mace:feide.no:services:no.inspera.assessment appears
+    in the Feide federation metadata). Any QTI support is Inspera's; nothing is published by NTNU.
+- id: orcid
+  conforms: false
+  evidence: >-
+    Not verifiable from an NTNU-operated surface. ORCID identifiers for NTNU researchers are carried
+    by Cristin and NVA, both Sikt-operated; no ORCID integration is declared on an ntnu.no or
+    ntnu.edu host, and no NTNU-published contract exists in which to check for one.
+- id: datacite
+  conforms: false
+  evidence: >-
+    Not verifiable from an NTNU-operated surface. DOIs for NTNU datasets are minted by DataverseNO
+    (UiT) under its own DataCite membership, so the conformance belongs to DataverseNO.
+- id: crossref
+  conforms: false
+  evidence: >-
+    Not verified. The NTNU Open Access Journals OAI-PMH interface advertises oai_dc, marcxml,
+    oai_marc and rfc1807 only — no Crossref metadata format is exposed there, and no Crossref
+    deposit claim was found on an NTNU host.

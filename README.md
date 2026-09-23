@@ -77,15 +77,39 @@ The Norwegian University of Science and Technology (NTNU) is Norway's largest un
 
 ## Tags
 
-Education, Higher Education, University, Research, Open Data, Norway, Scandinavia
+Education, Higher Education, University, Research, Research Data, Open Access, Open Data, Identity, Course Catalog, Norway, Scandinavia
 
 ## APIs
 
-- **Cristin Research Information API** — National CRIS exposing NTNU research output, persons and projects (NTNU is Cristin institution 194). Docs: https://api.cristin.no/v2/doc/index.html
-- **NVA Nasjonalt Vitenarkiv API** — Sikt national research archive now hosting the migrated NTNU Open institutional repository. Docs: https://nva.sikt.no/
-- **DataverseNO Research Data API** — National Dataverse research-data repository with NTNU dataverse and native REST API. Docs: https://guides.dataverse.org/en/latest/api/
-- **TP Timetable Web Service** — NTNU timetable/room/course web service at tp.educloud.no/ntnu/ws/ (access controlled, returns HTTP 401). Docs: https://tp.educloud.no/ntnu/timeplan/
-- **Feide / Dataporten Identity** — National Feide/Dataporten OpenID Connect, OAuth2 and SAML identity APIs used by NTNU. Docs: https://docs.feide.no/
+Every entry carries an operator. `institution` means NTNU runs the thing the entry describes;
+`tenant` means NTNU holds an account or collection on a platform somebody else operates, so the
+data is NTNU's and the contract is not.
+
+- **NTNU Open Access Journals OAI-PMH** (`institution`) — NTNU's own Open Journal Systems
+  installation at www.ntnu.no/ojs, serving sixteen NTNU-published journals over an open,
+  unauthenticated OAI-PMH 2.0 interface. Identify, ListMetadataFormats (oai_dc, marcxml, oai_marc,
+  rfc1807) and ListSets all return 200. The only openly callable API in this profile that NTNU
+  itself operates. Base: https://www.ntnu.no/ojs/index.php/index/oai
+- **NTNU API Gateway** (`institution`) — api.ntnu.no is live and NTNU-run, but every path
+  redirects to Feide OAuth; /docs, /openapi.json and /status all serve the account-chooser page.
+  No public contract, scope list or registration. Docs: https://docs.feide.no/
+- **Cristin Research Information API** (`tenant`) — Sikt-operated national CRIS; NTNU is
+  institution 194. Docs: https://api.cristin.no/v2/doc/index.html
+- **NVA Nasjonalt Vitenarkiv API** (`tenant`) — Sikt national research archive that absorbed NTNU
+  Open; api.nva.unit.no returns 403 unauthenticated. Docs: https://nva.sikt.no/
+- **DataverseNO — NTNU Research Data Collection** (`tenant`) — the "ntnu" collection (id 5622,
+  contact research-data@ntnu.no) inside DataverseNO, run by UiT The Arctic University of Norway.
+  Docs: https://site.uit.no/dataverseno/
+- **TP Timetable Web Service** (`tenant`) — NTNU's instance on the shared educloud.no platform;
+  /ntnu/ws/ returns HTTP 403 unauthenticated. Docs: https://tp.educloud.no/ntnu/timeplan/
+- **Feide / Dataporten Identity Federation** (`tenant`) — NTNU has no eduGAIN entity of its own; it
+  appears as the shibmd:Scope "ntnu.no" on Sikt's idp.feide.no. Docs: https://docs.feide.no/
+
+## Standards Conformance
+
+- [conformance/ntnu-conformance.yml](conformance/ntnu-conformance.yml) — education-regime domain
+  standards, established by live probe. One institution-operated hit: **oai-pmh**. SAML and
+  Shibboleth are met through Feide and are recorded as tenant conformance.
 
 ## Plans, Rate Limits & FinOps
 
@@ -96,22 +120,50 @@ Education, Higher Education, University, Research, Open Data, Norway, Scandinavi
 ## Timestamps
 
 - Created: 2026-06-03
-- Modified: 2026-06-03
+- Modified: 2026-08-30
 
 ## Common Properties
 
 - Website: https://www.ntnu.edu/
-- GitHub: https://github.com/EECS-NTNU
+- GitHub Organization: https://github.com/EECS-NTNU
 - LinkedIn: https://www.linkedin.com/school/ntnu/
-- Developer Portal / Authentication: https://docs.feide.no/
+- Authentication: https://docs.feide.no/
+- security.txt: https://www.ntnu.no/.well-known/security.txt
+- Identity Federation: https://metadata.feide.no/feide-edugain-metadata.xml
+- Open Data: https://data.ntnu.no/
+- Research Repository: https://dataverse.no/dataverse/ntnu · https://nva.sikt.no/
+- Course Catalog: https://www.ntnu.no/studier/emner
+- Research Computing: https://www.hpc.ntnu.no/
+- AI Policy: https://i.ntnu.no/wiki/-/wiki/English/Use+of+ICT+tools+with+generative+artificial+intelligence+at+NTNU+-+policy
+- AI Tooling: https://i.ntnu.no/en/ki-for-ansatte
 - Review: [review.yml](review.yml)
 
 ## Notes
 
-- No single official NTNU institutional developer portal or GitHub org was found; the public API footprint is delivered through national Sikt-operated services (Cristin, NVA, Feide/Dataporten) and the shared DataverseNO and TP platforms.
-- The legacy NTNU Open OAI-PMH endpoint (ntnuopen.ntnu.no) now redirects into the Sikt NVA single-page application, indicating the institutional repository has been migrated to NVA.
-- The TP timetable web service exists but is access controlled (HTTP 401); programmatic use requires institutional authorization. No endpoints were fabricated — gated and migrated services are flagged honestly.
-- The LinkedIn school page returns HTTP 999 to automated probes (LinkedIn bot-blocking), which is not evidence of absence.
+- **Vendor contracts removed 2026-08-30.** This repo previously held 35 OpenAPI files
+  (`ntnu-*-api-openapi.yml`) plus 87 artifacts derived from them — JSON Schema, JSON Structure,
+  examples, Spectral rules, vocabulary, JSON-LD, Postman/OpenCollection collections and an
+  agentic-access map. All 35 were per-tag splits of one source, `openapi/_original/ntnu-dataverseno.yaml`,
+  whose `info.title` is "Dataverse API" and whose `servers[]` is `https://dataverse.no/api`. That is
+  the generic Dataverse 6.6 product contract, shipped by six to eight other institutions in this
+  catalog and served by DataverseNO (UiT), not by NTNU. The `apis.yml` entries built on it also
+  carried a wrong `baseURL` of `https://api.cristin.no/v2/` — a second, unrelated service. The
+  relationship is preserved as a single `tenant` entry; the vendor's contract is not.
+- NTNU publishes no API contract of its own — no OpenAPI, AsyncAPI, GraphQL schema or llms.txt on
+  any NTNU host (www.ntnu.no/llms.txt 404, developer.ntnu.no does not resolve).
+- The one previously uncatalogued institution-operated surface found in this pass is the OAI-PMH
+  interface of NTNU Open Access Journals at www.ntnu.no/ojs.
+- data.ntnu.no resolves and returns a one-line page ("Adresse for publisering av åpne data")
+  directing readers to the national portal data.norge.no — NTNU's open data is published there.
+- The legacy NTNU Open OAI-PMH endpoint (ntnuopen.ntnu.no) now redirects into the Sikt NVA
+  single-page application; the institutional repository has been migrated to NVA.
+- github.com/NTNU is a personal user account with one repository, last updated 2015 — it is not an
+  institutional organization and is not credited here. github.com/EECS-NTNU is a departmental org.
+- i.ntnu.no returns HTTP 200 for any path with a generic "Kunnskapsbasen" title; the AI policy and
+  AI tooling pointers were confirmed against a deliberately bogus control URL (17,420 and 11,849
+  characters of body text versus 1,615 for the control).
+- The LinkedIn school page returns HTTP 999 to automated probes (LinkedIn bot-blocking), which
+  grades live, not dead.
 
 ## Maintainers
 

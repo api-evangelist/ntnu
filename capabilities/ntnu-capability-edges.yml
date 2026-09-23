@@ -1,0 +1,34 @@
+slug: ntnu
+provider: Norwegian University of Science and Technology
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Users
+  spec_file: ntnu-users-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: POST /users/register Users_registerOIDCUser; POST /users/token/recreate Users_recreateToken;
+    POST /users/{identifier}/removeRoles Users_removeUserRoles
+  reason: Account registration via OIDC, API token lifecycle, identifier changes, account merging and
+    role removal — clearly identity and access administration for the platform, not student records.
+- tag: Roles
+  spec_file: ntnu-roles-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.78
+  evidence: POST /roles Roles_createNewRole; DELETE /roles/{id} Roles_deleteRole
+  reason: CRUD over authorisation roles in the repository platform — role definition for access control,
+    i.e. Identity & Access Management. Not an education-specific capability.
