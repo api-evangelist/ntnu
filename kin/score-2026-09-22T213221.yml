@@ -1,28 +1,26 @@
-# Kin Score artifact — ntnu — 2026-08-26T215308
+# Kin Score artifact — ntnu — 2026-09-22T213221
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: ntnu
-  schema_version: 0.15.0
-  scored_at: '2026-08-26'
-  run_ts: 2026-08-26T215308
-  composite: 38.3
-  band: thin
+  schema_version: 0.22.0
+  scored_at: '2026-09-22'
+  run_ts: 2026-09-22T213221
+  composite: 24.4
+  band: emerging
   facets:
-    discoverability: 59.3
-    contract_quality: 52.5
-    governance: 9.8
-    operational_transparency: 26.3
-    developer_ergonomics: 33.3
-    commercial_clarity: 28.9
-    contract_governance: 9.8
+    discoverability: 85.2
+    contract_quality: 0.0
+    contract_governance: 0.0
+    operational_transparency: 23.7
+    developer_ergonomics: 23.8
     access_clarity: 28.9
   agent_readiness:
-    score: 22.7
-    band: agent-aware
+    score: 5.0
+    band: human-only
     dimensions:
-      spec_presence: true
-      agentic_access: derived
+      spec_presence: false
+      agentic_access: false
       reversibility_documented: false
       mcp_server: false
       auth_clarity: bearer
@@ -35,7 +33,7 @@ kin_score:
       well_known_catalog: false
       consent_identity: false
       agent_card: false
-      dry_run_mode: true
+      dry_run_mode: false
       delegated_identity: false
       protected_resource_metadata: false
       dynamic_client_registration: false
@@ -46,10 +44,3 @@ kin_score:
     regime_id: education
     score: 42.6
     matched_via: tags
-  provenance:
-    agentic_access: derived
-    contracts:
-      total: 35
-      derived: 0
-      coverage: 0.0
-      callable: 100.0
