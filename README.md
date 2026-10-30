@@ -1,4 +1,4 @@
-# Norwegian University of Science and Technology (ntnu)
+# Norwegian University of Science and Technology
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,107 +64,116 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-The Norwegian University of Science and Technology (NTNU) is Norway's largest university, headquartered in Trondheim with campuses in Gjoverik and Alesund, and ranked #264 in the QS World University Rankings 2025. NTNU does not run a single consolidated institutional developer portal; its public, machine-readable footprint is delivered mostly through national shared research and education infrastructure operated by Sikt (the Norwegian Agency for Shared Services in Education and Research). This repository catalogs that footprint as an [APIs.json](https://apisjson.org) provider profile.
+The Norwegian University of Science and Technology (NTNU) is Norway's largest university, headquartered in Trondheim with campuses in Gjovik and Alesund. NTNU operates no consolidated institutional developer portal and publishes no OpenAPI, AsyncAPI or other machine-readable API contract of its own. Its one openly callable, institution-operated surface is the OAI-PMH interface of NTNU Open Access Journals at www.ntnu.no/ojs, which answers Identify, ListMetadataFormats and ListSets over sixteen NTNU-published journals. NTNU also runs an institutional API gateway at api.ntnu.no, but every path on it is behind Feide OAuth and no public documentation, contract or scope list is served without an institutional account. Everything else that looks programmable under NTNU's name is operated by somebody else and entered here as a tenant relationship, not as NTNU engineering: research data in the NTNU collection of DataverseNO (run by UiT The Arctic University of Norway on Dataverse software), research information in Cristin and the national research archive NVA (both run by Sikt), timetables in TP on educloud.no, identity in the Feide federation where NTNU exists as the scope ntnu.no on Sikt's national IdP rather than as its own eduGAIN entity, and teaching in a hosted Canvas tenant. This repo previously carried 35 OpenAPI files and 87 derived artifacts that were splits of the generic Dataverse 6.6 product contract; they were the vendor's, not NTNU's, and have been removed.
 
-- APIs.json: https://raw.githubusercontent.com/api-evangelist/ntnu/refs/heads/main/apis.yml
-- Run with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=ntnu-api-evangelist&utm_content=repo
+**Areas:** Education · Higher Education · University · Research · Research Data · Open Access · Open Data · Identity · Course Catalog · Norway · Scandinavia · Identity Federation
 
-## Type
+## Norwegian University of Science and Technology on APIs.io
 
-- Index
-- Consumer
-- 3rd-Party
+Everything profiled for Norwegian University of Science and Technology is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ntnu/](https://apis.io/providers/ntnu/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-Education, Higher Education, University, Research, Research Data, Open Access, Open Data, Identity, Course Catalog, Norway, Scandinavia
+- [NTNU Open Access Journals OAI-PMH](https://apis.io/apis/ntnu/ojs-oai/) — NTNU runs its own Open Journal Systems installation, "NTNU Open Access Journals", on its own registrable domain at www.ntnu.no/ojs, publishing sixteen…
+- [NTNU API Gateway (api.ntnu.no)](https://apis.io/apis/ntnu/api-ntnu/) — api.ntnu.no is an NTNU-operated API gateway serving internal and partner integrations. It is live and institution-run — responses carry NTNU's own…
+- [Cristin Research Information API (NTNU institution 194)](https://apis.io/apis/ntnu/cristin/) — Cristin is Norway's national Current Research Information System, operated by Sikt (the Norwegian Agency for Shared Services in Education and Research) on…
+- [NVA National Research Archive (NTNU Open successor)](https://apis.io/apis/ntnu/nva/) — Nasjonalt vitenarkiv (NVA) is the Sikt-operated national open research archive that absorbed NTNU's institutional repository — ntnuopen.ntnu.no now…
+- [DataverseNO — NTNU Research Data Collection](https://apis.io/apis/ntnu/dataverseno/) — NTNU's research data is deposited into the "NTNU – Norwegian University of Science and Technology" collection (alias "ntnu") of DataverseNO, the Norwegian…
+- [TP Timetable Web Service (NTNU instance)](https://apis.io/apis/ntnu/tp/) — TP (Timeplan) is the timetable, room-booking and course-activity system NTNU uses, hosted on the shared educloud.no platform at tp.educloud.no/ntnu. The…
+- [Feide / Dataporten Identity Federation (NTNU membership)](https://apis.io/apis/ntnu/feide/) — NTNU authenticates through Feide, the Norwegian national identity federation operated by Sikt, with Dataporten providing OAuth2 / OpenID Connect and SAML…
 
-## APIs
+### Published properties
 
-Every entry carries an operator. `institution` means NTNU runs the thing the entry describes;
-`tenant` means NTNU holds an account or collection on a platform somebody else operates, so the
-data is NTNU's and the contract is not.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **NTNU Open Access Journals OAI-PMH** (`institution`) — NTNU's own Open Journal Systems
-  installation at www.ntnu.no/ojs, serving sixteen NTNU-published journals over an open,
-  unauthenticated OAI-PMH 2.0 interface. Identify, ListMetadataFormats (oai_dc, marcxml, oai_marc,
-  rfc1807) and ListSets all return 200. The only openly callable API in this profile that NTNU
-  itself operates. Base: https://www.ntnu.no/ojs/index.php/index/oai
-- **NTNU API Gateway** (`institution`) — api.ntnu.no is live and NTNU-run, but every path
-  redirects to Feide OAuth; /docs, /openapi.json and /status all serve the account-chooser page.
-  No public contract, scope list or registration. Docs: https://docs.feide.no/
-- **Cristin Research Information API** (`tenant`) — Sikt-operated national CRIS; NTNU is
-  institution 194. Docs: https://api.cristin.no/v2/doc/index.html
-- **NVA Nasjonalt Vitenarkiv API** (`tenant`) — Sikt national research archive that absorbed NTNU
-  Open; api.nva.unit.no returns 403 unauthenticated. Docs: https://nva.sikt.no/
-- **DataverseNO — NTNU Research Data Collection** (`tenant`) — the "ntnu" collection (id 5622,
-  contact research-data@ntnu.no) inside DataverseNO, run by UiT The Arctic University of Norway.
-  Docs: https://site.uit.no/dataverseno/
-- **TP Timetable Web Service** (`tenant`) — NTNU's instance on the shared educloud.no platform;
-  /ntnu/ws/ returns HTTP 403 unauthenticated. Docs: https://tp.educloud.no/ntnu/timeplan/
-- **Feide / Dataporten Identity Federation** (`tenant`) — NTNU has no eduGAIN entity of its own; it
-  appears as the shibmd:Scope "ntnu.no" on Sikt's idp.feide.no. Docs: https://docs.feide.no/
+#### Vocabulary (1)
 
-## Standards Conformance
+The provider's domain terms, defined.
 
-- [conformance/ntnu-conformance.yml](conformance/ntnu-conformance.yml) — education-regime domain
-  standards, established by live probe. One institution-operated hit: **oai-pmh**. SAML and
-  Shibboleth are met through Feide and are recorded as tenant conformance.
+- [NTNU DataverseNO Research Data Vocabulary](https://apis.io/vocabularies/ntnu/ntnu-vocabulary/)
 
-## Plans, Rate Limits & FinOps
+#### Security (2)
 
-- Plans & Pricing: [plans/ntnu-plans-pricing.yml](plans/ntnu-plans-pricing.yml)
-- Rate Limits: [rate-limits/ntnu-rate-limits.yml](rate-limits/ntnu-rate-limits.yml)
-- FinOps: [finops/ntnu-finops.yml](finops/ntnu-finops.yml)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Timestamps
+- [Ntnu Domain Security](https://apis.io/security/ntnu/ntnu-domain-security/)
+- [Ntnu Vulnerability Disclosure](https://apis.io/security/ntnu/ntnu-vulnerability-disclosure/)
 
-- Created: 2026-06-03
-- Modified: 2026-08-30
+#### Plans and pricing (1)
 
-## Common Properties
+Published plans, tiers and prices.
 
-- Website: https://www.ntnu.edu/
-- GitHub Organization: https://github.com/EECS-NTNU
-- LinkedIn: https://www.linkedin.com/school/ntnu/
-- Authentication: https://docs.feide.no/
-- security.txt: https://www.ntnu.no/.well-known/security.txt
-- Identity Federation: https://metadata.feide.no/feide-edugain-metadata.xml
-- Open Data: https://data.ntnu.no/
-- Research Repository: https://dataverse.no/dataverse/ntnu · https://nva.sikt.no/
-- Course Catalog: https://www.ntnu.no/studier/emner
-- Research Computing: https://www.hpc.ntnu.no/
-- AI Policy: https://i.ntnu.no/wiki/-/wiki/English/Use+of+ICT+tools+with+generative+artificial+intelligence+at+NTNU+-+policy
-- AI Tooling: https://i.ntnu.no/en/ki-for-ansatte
-- Review: [review.yml](review.yml)
+- [Ntnu Plans Pricing](https://apis.io/plans/ntnu/ntnu-plans-pricing/)
 
-## Notes
+#### Rate limits (1)
 
-- **Vendor contracts removed 2026-08-30.** This repo previously held 35 OpenAPI files
-  (`ntnu-*-api-openapi.yml`) plus 87 artifacts derived from them — JSON Schema, JSON Structure,
-  examples, Spectral rules, vocabulary, JSON-LD, Postman/OpenCollection collections and an
-  agentic-access map. All 35 were per-tag splits of one source, `openapi/_original/ntnu-dataverseno.yaml`,
-  whose `info.title` is "Dataverse API" and whose `servers[]` is `https://dataverse.no/api`. That is
-  the generic Dataverse 6.6 product contract, shipped by six to eight other institutions in this
-  catalog and served by DataverseNO (UiT), not by NTNU. The `apis.yml` entries built on it also
-  carried a wrong `baseURL` of `https://api.cristin.no/v2/` — a second, unrelated service. The
-  relationship is preserved as a single `tenant` entry; the vendor's contract is not.
-- NTNU publishes no API contract of its own — no OpenAPI, AsyncAPI, GraphQL schema or llms.txt on
-  any NTNU host (www.ntnu.no/llms.txt 404, developer.ntnu.no does not resolve).
-- The one previously uncatalogued institution-operated surface found in this pass is the OAI-PMH
-  interface of NTNU Open Access Journals at www.ntnu.no/ojs.
-- data.ntnu.no resolves and returns a one-line page ("Adresse for publisering av åpne data")
-  directing readers to the national portal data.norge.no — NTNU's open data is published there.
-- The legacy NTNU Open OAI-PMH endpoint (ntnuopen.ntnu.no) now redirects into the Sikt NVA
-  single-page application; the institutional repository has been migrated to NVA.
-- github.com/NTNU is a personal user account with one repository, last updated 2015 — it is not an
-  institutional organization and is not credited here. github.com/EECS-NTNU is a departmental org.
-- i.ntnu.no returns HTTP 200 for any path with a generic "Kunnskapsbasen" title; the AI policy and
-  AI tooling pointers were confirmed against a deliberately bogus control URL (17,420 and 11,849
-  characters of body text versus 1,615 for the control).
-- The LinkedIn school page returns HTTP 999 to automated probes (LinkedIn bot-blocking), which
-  grades live, not dead.
+Published request limits.
 
-## Maintainers
+- [Ntnu Rate Limits](https://apis.io/rate-limits/ntnu/ntnu-rate-limits/)
 
-- Kin Lane — kin@apievangelist.com
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Ntnu Finops](https://apis.io/finops/ntnu/ntnu-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.ntnu.edu/)
+- [Blog](https://nyheter.ntnu.no/en/feed/)
+- [GitHub](https://github.com/EECS-NTNU)
+
+## API Evangelist rating
+
+**Kin Score 20.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 82.1 |
+| Contract quality | 4.4 |
+| Contract governance | 18.2 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 5.3 |
+
+**Agent readiness 3.1** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 30.4** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ntnu/](https://apis.io/providers/ntnu/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Norwegian University of Science and Technology: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ntnu/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
